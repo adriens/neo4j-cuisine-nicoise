@@ -3028,82 +3028,82 @@ WHERE a.nom = 'Poivre' AND b.nom = 'Le bala de mouton'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
-// La fressure d'agneau
+// La fressure d\'agneau
 
 
-CREATE (n:Recette { nom: 'La fressure d'agneau'});
+CREATE (n:Recette { nom: 'La fressure d\'agneau'});
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Agneau' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Agneau' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Porc' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Porc' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Veau' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Veau' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Olive noire de Nice' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Olive noire de Nice' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Cèpes' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Cèpes' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Oignon' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Oignon' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Ail' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Ail' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Persil' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Persil' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Thym' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Thym' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Laurier' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Laurier' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Vin rouge' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Vin rouge' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Farine' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Farine' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Huile d\'olive' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Sel' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Sel' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Poivre' AND b.nom = 'La fressure d'agneau'
+WHERE a.nom = 'Poivre' AND b.nom = 'La fressure d\'agneau'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
