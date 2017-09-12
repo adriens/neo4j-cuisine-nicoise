@@ -2,6 +2,27 @@
 MATCH (n)
 DETACH DELETE n;
 
+// On crée les catégories d'aliments
+CREATE (n:Categorie_Alimentaire { nom: 'Viande'});
+CREATE (n:Categorie_Alimentaire { nom: 'Poisson'});
+CREATE (n:Categorie_Alimentaire { nom: 'Légume'});
+CREATE (n:Categorie_Alimentaire { nom: 'Alcool'});
+CREATE (n:Categorie_Alimentaire { nom: 'Condiment'});
+CREATE (n:Categorie_Alimentaire { nom: 'Légumineuses'});
+CREATE (n:Categorie_Alimentaire { nom: 'Fruit'});
+CREATE (n:Categorie_Alimentaire { nom: 'Fruit de mer'});
+CREATE (n:Categorie_Alimentaire { nom: 'Epices'});
+CREATE (n:Categorie_Alimentaire { nom: 'Herbe aromatique'});
+CREATE (n:Categorie_Alimentaire { nom: 'Autre'});
+CREATE (n:Categorie_Alimentaire { nom: 'Champignon'});
+CREATE (n:Categorie_Alimentaire { nom: 'Produit laitier'});
+CREATE (n:Categorie_Alimentaire { nom: 'Charcuterie'});
+CREATE (n:Categorie_Alimentaire { nom: 'Abats'});
+CREATE (n:Categorie_Alimentaire { nom: 'Pain'});
+CREATE (n:Categorie_Alimentaire { nom: 'Pâtes'});
+CREATE (n:Categorie_Alimentaire { nom: 'Oeufs'});
+CREATE (n:Categorie_Alimentaire { nom: 'Riz'});
+
 
 // On créer les ingrédients
 CREATE (n:Ingredient { nom: 'Ail'});
@@ -99,6 +120,485 @@ CREATE (n:Ingredient { nom: 'Vermicelles'});
 CREATE (n:Ingredient { nom: 'Vin blanc'});
 CREATE (n:Ingredient { nom: 'Vin rouge'});
 CREATE (n:Ingredient { nom: 'Vinaigre'});
+
+// On lie les aliments à leur catégorie
+
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Ail' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Agneau' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Anchois' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Artichaux' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Aubergine' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Basilic' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Beurre' AND b.nom = 'Produit laitier' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Blette' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Boeuf' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Brocoli' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Câpres' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Carotte' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Céleris' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Cébète' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Cèpes' AND b.nom = 'Champignon' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Cerfeuil' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Chapelure' AND b.nom = 'Pain' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Cornichons' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Champignon' AND b.nom = 'Champignon' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Cheveux d\'ange' AND b.nom = 'Pâtes' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Chicorée' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Chou' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Ciboule' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Citron' AND b.nom = 'Fruit' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Concombre' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Congre' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Courgette' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Courge rouge' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Crabe' AND b.nom = 'Fruit de mer' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Crème' AND b.nom = 'Produit laitier' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Epinard' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Farine' AND b.nom = 'Autre' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Fenouil' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Fèves' AND b.nom = 'Légumineuses' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Foie de veau' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Fleur de courge' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Fleur de chou-fleur' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Girofle' AND b.nom = 'Epices' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Haricots blancs' AND b.nom = 'Légumineuses' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Jambon cru' AND b.nom = 'Charcuterie' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Laitue' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Lapin' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Lard gras' AND b.nom = 'Charcuterie' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Laurier' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Marc du pays' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Marjolaine' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Mie de pain' AND b.nom = 'Pain' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Moule' AND b.nom = 'Fruit de mer' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Moutarde' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Mouton' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Navet' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Oeufs' AND b.nom = 'Oeufs' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Oignon' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Oignon frais' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Olive noire de Nice' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Origan' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Pain' AND b.nom = 'Pain' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Pain rond' AND b.nom = 'Pain' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Panne' AND b.nom = 'Pain' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Parmesan' AND b.nom = 'Produit laitier' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Pâte à pain' AND b.nom = 'Pain' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Persil' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Petit salé' AND b.nom = 'Charcuterie' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Petits pois' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Piment de Cayenne' AND b.nom = 'Epices' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poireau' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Pois chiches' AND b.nom = 'Légumineuses' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poissons de roche' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poivre' AND b.nom = 'Epices' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poivre de Cayenne' AND b.nom = 'Epices' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poivron rouge' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poivron vert' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Pomme de terre' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Porc maigre' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poulpe' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Pourpier' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Poutine' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Radis' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Riz' AND b.nom = 'Riz' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Safran' AND b.nom = 'Epices' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Saindoux' AND b.nom = 'Charcuterie' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Sang de porc' AND b.nom = 'Charcuterie' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Sauge' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Sel' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Sucre' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Thon' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Thym' AND b.nom = 'Herbe aromatique' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Tripes' AND b.nom = 'Abats' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Tomate' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Veau' AND b.nom = 'Viande' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Vermicelles' AND b.nom = 'Pâtes' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Vin blanc' AND b.nom = 'Alcool' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Vin rouge' AND b.nom = 'Alcool' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Vinaigre' AND b.nom = 'Condiment' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
 
 
 
