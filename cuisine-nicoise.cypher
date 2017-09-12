@@ -2,6 +2,7 @@
 MATCH (n)
 DETACH DELETE n;
 
+
 // On créer les ingrédients
 CREATE (n:Ingredient { nom: 'Ail'});
 CREATE (n:Ingredient { nom: 'Agneau'});
