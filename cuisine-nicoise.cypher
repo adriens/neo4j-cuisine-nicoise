@@ -75,6 +75,7 @@ CREATE (n:Ingredient { nom: 'Fèves'});
 CREATE (n:Ingredient { nom: 'Figue'});
 CREATE (n:Ingredient { nom: 'Foie de veau'});
 CREATE (n:Ingredient { nom: 'Fleur de courge'});
+CREATE (n:Ingredient { nom: 'Fleur de courgette'});
 CREATE (n:Ingredient { nom: 'Fleur de chou-fleur'});
 CREATE (n:Ingredient { nom: 'Girofle'});
 CREATE (n:Ingredient { nom: 'Grive'});
@@ -408,6 +409,11 @@ RETURN r;
 
 MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
 WHERE a.nom = 'Fleur de courge' AND b.nom = 'Légume' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Fleur de courgette' AND b.nom = 'Légume' 
 CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
 RETURN r;
 
@@ -6278,6 +6284,498 @@ RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
 WHERE a.nom = 'Poivre' AND b.nom = 'L\'anguille du bicou'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les oignons farcis
+
+CREATE (n:Recette { nom: 'Les oignons farcis'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Basilic' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Riz' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Chapelure' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les oignons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les courgettes farcies
+
+CREATE (n:Recette { nom: 'Les courgettes farcies'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Courgette' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Basilic' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Riz' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Chapelure' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les courgettes farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les aubergines farcies
+
+CREATE (n:Recette { nom: 'Les aubergines farcies'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Aubergine' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Anchois' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Chapelure' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les aubergines farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les tomates farcies
+
+CREATE (n:Recette { nom: 'Les tomates farcies'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Tomate' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Boeuf' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Porc' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Basilic' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Persil' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les tomates farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les poivrons farcis
+
+CREATE (n:Recette { nom: 'Les poivrons farcis'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivron rouge' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Basilic' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Riz' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les poivrons farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les fleurs de courgette farcies
+
+CREATE (n:Recette { nom: 'Les fleurs de courgette farcies'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Fleur de courgette' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Fleur de courge' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Courgette' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Riz' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les fleurs de courgette farcies'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les artichaux au thym
+
+CREATE (n:Recette { nom: 'Les artichaux au thym'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Artichaux' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Thym' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Champignon' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les artichaux au thym'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Les fonds d\'artichaux farcis
+
+CREATE (n:Recette { nom: 'Les fonds d\'artichaux farcis'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Artichaux' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Persil' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Pain' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Les fonds d\'artichaux farcis'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Les fonds d\'artichaux farcis'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
