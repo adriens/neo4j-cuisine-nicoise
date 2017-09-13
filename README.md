@@ -35,7 +35,7 @@ DETACH DELETE ingredient;
 Les dix ingrédients les plus référencés dans les recette (plus intéressant dans ```cypher-shell```) :
 
 ```
-MATCH (n)-[r]->()
+MATCH (n)-[r:INGREDIENT_DE]->(s:Recette)
 WITH n, count(r) as c
 RETURN n, c
 ORDER BY c DESC
