@@ -55,9 +55,9 @@ Les dix ingrédients les plus référencés dans les recette (plus intéressant 
 
 ```
 MATCH (n)-[r:INGREDIENT_DE]->(s:Recette)
-WITH n, count(r) as c
-RETURN n, c
-ORDER BY c DESC
+WITH n as Ingredient, count(r) as nombre
+RETURN Ingredient , nombre
+ORDER BY nombre DESC
 LIMIT 10;
 ```
 
@@ -72,8 +72,8 @@ Les top 3 des catégories alimentaires les plus référencées (celles auxquelle
 
 ```
 MATCH (n:Ingredient)-[r]->(m:Categorie_Alimentaire)
-RETURN m.nom,COUNT(*) AS count
-ORDER BY count DESC
+RETURN m.nom as Categorie, COUNT(*) AS nombre
+ORDER BY nombre DESC
 LIMIT 3;
 ```
 
@@ -89,15 +89,6 @@ LIMIT 3
 match (i:Ingredient)-[r]->(cat)
 return i,r,cat;
 ```
-
-
-Les 3 catégories d'ingrédients les plus utilisées dans les recettes :
-
-```
-
-```
-
-
 
 Les recettes dont rien ne provient des animaux :
 
