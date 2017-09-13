@@ -20,6 +20,19 @@ Lister les noeuds orphelins (on ne doit pas en avoir) :
 MATCH (n) WHERE NOT (n)--() RETURN COUNT(n);
 ```
 
+# Nombre total de recettes
+
+```
+MATCH (r:Recette)
+RETURN count(*);
+```
+
+# Nombre total d'ingrédients
+
+```
+MATCH (i:Ingredient)
+RETURN count(*);
+```
 
 # Requêtes exemples
 
