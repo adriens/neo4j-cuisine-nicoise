@@ -24,3 +24,10 @@ Pour cela, on :
 
 On veille, que pour chaque recette, **chaque ingrédient utilisé puisse se rattacher aux ingrédients existants.** Si ce dernier n'existe pas,
 alors il faut en ajouter un, comme décrit plus haut.
+
+# Contribuer des requêtes
+
+* Faire une PR directement dans la bonne section pour proposer de nouvelles requêtes mettant en avant
+les spécificités de la cuisine niçoise, ou pour améliorer les existantes
+* Proposer un markdown avec des images de réalisations graphiques ayant exploitées ces données
+* Ajouter un lien vers une de vos présentations/code exploitant ou mettant en valeur ces données
