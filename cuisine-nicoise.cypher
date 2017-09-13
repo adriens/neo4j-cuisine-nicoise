@@ -32,6 +32,7 @@ CREATE (n:Ingredient { nom: 'Ail'});
 CREATE (n:Ingredient { nom: 'Agneau'});
 CREATE (n:Ingredient { nom: 'Anchois'});
 CREATE (n:Ingredient { nom: 'Anguille'});
+CREATE (n:Ingredient { nom: 'Arapède'});
 CREATE (n:Ingredient { nom: 'Artichaux'});
 CREATE (n:Ingredient { nom: 'Aubergine'});
 CREATE (n:Ingredient { nom: 'Baies de genièvre'});
@@ -105,6 +106,8 @@ CREATE (n:Ingredient { nom: 'Oignon'});
 CREATE (n:Ingredient { nom: 'Oignon frais'});
 CREATE (n:Ingredient { nom: 'Olive noire de Nice'});
 CREATE (n:Ingredient { nom: 'Origan'});
+CREATE (n:Ingredient { nom: 'Oursin'});
+CREATE (n:Ingredient { nom: 'Ortie de mer'});
 CREATE (n:Ingredient { nom: 'Pageot'});
 CREATE (n:Ingredient { nom: 'Pain'});
 CREATE (n:Ingredient { nom: 'Pain rond'});
@@ -155,6 +158,7 @@ CREATE (n:Ingredient { nom: 'Vermicelles'});
 CREATE (n:Ingredient { nom: 'Vin blanc'});
 CREATE (n:Ingredient { nom: 'Vin rouge'});
 CREATE (n:Ingredient { nom: 'Vinaigre'});
+CREATE (n:Ingredient { nom: 'Violet'});
 
 // On lie les aliments à leur catégorie
 MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
@@ -174,6 +178,11 @@ RETURN r;
 
 MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
 WHERE a.nom = 'Anguille' AND b.nom = 'Poisson' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Arapède' AND b.nom = 'Fruit de mer' 
 CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
 RETURN r;
 
@@ -255,9 +264,20 @@ CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Oursin' AND b.nom = 'Fruit de mer' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Ortie de mer' AND b.nom = 'Fruit de mer' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
+
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
 WHERE a.nom = 'Pageot' AND b.nom = 'Poisson' 
 CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
 RETURN r;
+
 
 MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
 WHERE a.nom = 'Chapelure' AND b.nom = 'Pain' 
@@ -783,8 +803,10 @@ WHERE a.nom = 'Vinaigre' AND b.nom = 'Condiment'
 CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
 RETURN r;
 
-
-
+MATCH (a:Ingredient),(b:Categorie_Alimentaire)  
+WHERE a.nom = 'Violet' AND b.nom = 'Fruit de mer' 
+CREATE (a)-[r:EST_DE_FAMILLE { nom: 'EST_DE_FAMILLE' }]->(b) 
+RETURN r;
 
 
 // Eau salée
