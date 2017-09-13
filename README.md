@@ -13,14 +13,14 @@ Le livre de référence qui me suit depuis de nombreuses année :
 
 # Requêtes utilitaires
 
-Lister les noeuds orphelins :
+Lister les noeuds orphelins (on ne doit pas en avoir) :
 
 ```
-MATCH (n) WHERE NOT (n)--() RETURN COUNT(n)
+MATCH (n) WHERE NOT (n)--() RETURN COUNT(n);
 ```
 
 
-# Queries examples
+# Requêtes exemples
 
 Supprimer les ingrédients peu intéressants : sel et poivre :
 
@@ -77,15 +77,6 @@ return i,r,cat;
 ```
 
 
-
-
-Les catégories d'ingrédients les plus représentées (sans passer par les recettes) :
-
-```
-
-```
-
-
 Les 3 catégories d'ingrédients les plus utilisées dans les recettes :
 
 ```
@@ -97,6 +88,7 @@ Les 3 catégories d'ingrédients les plus utilisées dans les recettes :
 Les recettes dont rien ne provient des animaux :
 
 ```
+
 ```
 
 

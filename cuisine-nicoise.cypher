@@ -12,6 +12,7 @@ CREATE (n:Categorie_Alimentaire { nom: 'Légumineuses'});
 CREATE (n:Categorie_Alimentaire { nom: 'Fruit'});
 CREATE (n:Categorie_Alimentaire { nom: 'Fruit de mer'});
 CREATE (n:Categorie_Alimentaire { nom: 'Epices'});
+CREATE (n:Categorie_Alimentaire { nom: 'Graine'});
 CREATE (n:Categorie_Alimentaire { nom: 'Herbe aromatique'});
 CREATE (n:Categorie_Alimentaire { nom: 'Autre'});
 CREATE (n:Categorie_Alimentaire { nom: 'Champignon'});
@@ -2374,52 +2375,52 @@ RETURN r;
 CREATE (n:Recette { nom: 'Les tomates au four'});
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Tomate' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Tomate' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Poivron rouge' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Poivron rouge' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Thym' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Thym' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Persil' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Persil' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Basilic' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Basilic' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Câpres' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Câpres' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Chapelure' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Chapelure' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Huile d\'olive' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Sel' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Sel' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
-WHERE a.nom = 'Poivre' AND b.nom = Les tomates au four''
+WHERE a.nom = 'Poivre' AND b.nom = 'Les tomates au four'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
@@ -3606,5 +3607,15 @@ RETURN r;
 
 MATCH (a:Ingredient),(b:Recette)
 WHERE a.nom = 'Poivre' AND b.nom = 'La fressure d\'agneau'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Le mouton aux raisins et aux pignons
+
+
+CREATE (n:Recette { nom: 'Le mouton aux raisins et aux pignons'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = '' AND b.nom = 'Le mouton aux raisins et aux pignons'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
