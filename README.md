@@ -6,6 +6,11 @@ Graphe neo4j des recettes et ingrédients de la cuisine niçoise. Ce fichier est
 
 Official tutorial : https://neo4j.com/docs/developer-manual/current/cypher/clauses/match/#match-with-labels
 
+Le livre de référence qui me suit depuis de nombreuses année :
+
+![La bonne cuisine du Comté de Nice, Jacques Médecin](img/couverture-livre.jpg "La bonne cuisine du Comté de Nice, Jacques Médecin, éd. SOLAR ISBN 2-263-02613-4")
+
+
 # Requêtes utilitaires
 
 Lister les noeuds orphelins :
