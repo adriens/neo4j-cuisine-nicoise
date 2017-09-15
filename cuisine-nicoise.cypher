@@ -9655,3 +9655,126 @@ WHERE a.nom = 'Poivre' AND b.nom = 'La trouchia'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
+// Le tian de printemps
+
+CREATE (n:Recette { nom: 'Le tian de printemps'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Févettes' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petits pois' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Artichaux' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Cébète' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Le tian de printemps'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// Le tian de courgettes
+
+CREATE (n:Recette { nom: 'Le tian de courgettes'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Courgette' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Fleur de courge' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Persil' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Petit salé' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Riz' AND b.nom = 'Le tian de courgettes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
