@@ -9523,3 +9523,135 @@ WHERE a.nom = 'Poivre' AND b.nom = 'Les pommes de terre au gratin'
 CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
 RETURN r;
 
+// L'omelette d\'oursins
+
+CREATE (n:Recette { nom: 'L\'omelette d\'oursins'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oursin' AND b.nom = 'L\'omelette d\'oursins'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'L\'omelette d\'oursins'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Citron' AND b.nom = 'L\'omelette d\'oursins'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'L\'omelette d\'oursins'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'L\'omelette d\'oursins'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// L'omelette d\'arapèdes
+
+CREATE (n:Recette { nom: 'L'omelette d\'arapèdes'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'L'omelette d\'arapèdes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Arapède' AND b.nom = 'L'omelette d\'arapèdes'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+
+// L'omelette de poutine
+
+CREATE (n:Recette { nom: 'L\'omelette de poutine'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poutine' AND b.nom = 'L\'omelette de poutine'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'L\'omelette de poutine'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Persil' AND b.nom = 'L\'omelette de poutine'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Ail' AND b.nom = 'L\'omelette de poutine'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'L\'omelette de poutine'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'L\'omelette de poutine'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+// La trouchia
+
+CREATE (n:Recette { nom: 'La trouchia'});
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oeufs' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Blette' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Cerfeuil' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Persil' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Oignon' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Basilic' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Parmesan' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Huile d\'olive' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Sel' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
+MATCH (a:Ingredient),(b:Recette)
+WHERE a.nom = 'Poivre' AND b.nom = 'La trouchia'
+CREATE (a)-[r:INGREDIENT_DE { nom: 'INGREDIENT_DE' }]->(b)
+RETURN r;
+
