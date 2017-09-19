@@ -78,7 +78,7 @@ Les top 3 des catégories alimentaires les plus référencées (celles auxquelle
 MATCH (n:Ingredient)-[r]->(m:Categorie_Alimentaire)
 RETURN m.nom as Categorie, COUNT(*) AS nombre
 ORDER BY nombre DESC
-LIMIT 3;
+LIMIT 10;
 ```
 
 Les ingrédients des 3 catégories d'aliment les plus fournies :
@@ -93,6 +93,33 @@ LIMIT 3
 match (i:Ingredient)-[r]->(cat)
 return i,r,cat;
 ```
+
+
+
+Fréquence de tous les légumes de toutes les recettes
+
+```
+MATCH (n:Ingredient)-[r]->(m:Recette)
+where (n)-[:EST_DE_FAMILLE]-({ nom: 'Légume' })
+with n , count(*) as count
+order by count desc
+return n.nom, count;
+```
+
+Fréquence des catégories alimentaires dans les recettes :
+
+```
+MATCH (n:Ingredient)-[r]->(m:Recette)
+//where (n)-[:EST_DE_FAMILLE]-({ nom: 'Légume' })
+with n , count(*) as count
+order by count desc
+match (n)-[:EST_DE_FAMILLE]->(c:Categorie_Alimentaire)
+with c, count(*) as count
+return  c.nom as categorie, count as nombre
+order by nombre desc;
+```
+
+
 
 Les recettes dont rien ne provient des animaux :
 
@@ -114,4 +141,16 @@ Les plats centraux de la cuisine niçoise (ie. ceux utilisant les ingrédient ce
 
 ```
 
+```
+
+
+Le nombre de fois que deux ingrédients distincts se retrouvent dans une même recette :
+
+```
+MATCH (n:Ingredient)-[r:INGREDIENT_DE]->(m:Recette)<-[s:INGREDIENT_DE]-(o:Ingredient)
+WITH n as i1, o as i2, count(r) as nombre
+where i1.nom = 'Ail' and i1.nom <> o.nom
+return i1.nom, i2.nom, nombre 
+//order by i1.nom, i2.nom
+order by nombre desc
 ```

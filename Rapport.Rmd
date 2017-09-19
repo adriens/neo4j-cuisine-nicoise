@@ -1,0 +1,148 @@
+---
+title: "Cuisine niÃ§oise"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r include = FALSE}
+library("viridis")
+library("igraph")
+library("tm")
+library("SnowballC")
+library("wordcloud")
+library("RColorBrewer")
+library("RNeo4j")
+library("ggplot2")
+library("tagcloud")
+library("igraph")
+```
+
+## Histogramme des ingrédients
+
+```{r}
+neo4j = startGraph("http://demo:demo@localhost:7474/db/data/")
+
+query = "
+MATCH (n)-[r:INGREDIENT_DE]->(s:Recette)
+WITH n as Ingredient, count(r) as nombre
+RETURN Ingredient.nom , nombre
+ORDER BY nombre DESC
+LIMIT 20
+"
+stats = cypher(neo4j, query)
+ggplot(stats, aes(x = reorder(Ingredient.nom, nombre), y = nombre)) + 
+  geom_bar(stat = "identity", fill = "darkblue") +
+  coord_flip() +
+  labs(x = "Ingrédient", 
+       y = "Nombre", 
+       title = "Fréq. d'utilisation des ingrédients") +
+  theme(axis.text = element_text(size = 12, color = "black"),
+        axis.title = element_text(size = 14, color = "black"),
+        plot.title = element_text(size = 16, color = "black"))
+
+```
+------
+## Tag cloud des ingrédients
+
+```{r}
+# liste des ingrédients de toutes les recettes
+query = "
+MATCH (n)-[r:INGREDIENT_DE]->(s:Recette)
+WITH n as Ingredient, count(r) as nombre
+RETURN Ingredient.nom , nombre
+ORDER BY nombre DESC
+LIMIT 100
+"
+stats = cypher(neo4j, query)
+set.seed(1234)
+wordcloud(words = stats$Ingredient, freq = stats$nombre, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+
+```
+
+
+## Tag cloud des légumes
+
+```{r}
+query = "
+MATCH (n:Ingredient)-[r]->(m:Recette)
+where (n)-[:EST_DE_FAMILLE]-({ nom: 'Légume' })
+with n , count(*) as count
+order by count desc
+return n.nom as Ingredient, count as nombre
+"
+stats = cypher(neo4j, query)
+set.seed(1234)
+wordcloud(words = stats$Ingredient, freq = stats$nombre, min.freq = 1,
+          max.words=50, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+```
+------
+
+## Catégories alimentaires
+
+```{r}
+query = "
+MATCH (n:Ingredient)-[r]->(m:Recette)
+//where (n)-[:EST_DE_FAMILLE]-({ nom: 'Légume' })
+with n , count(*) as count
+order by count desc
+match (n)-[:EST_DE_FAMILLE]->(c:Categorie_Alimentaire)
+with c, count(*) as count
+return  c.nom as categorie, count as nombre
+order by nombre desc
+"
+stats = cypher(neo4j, query)
+set.seed(1234)
+wordcloud(words = stats$categorie, freq = stats$nombre, min.freq = 1,
+          max.words=20, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+```
+
+
+## Heatmap des ingrdients
+
+```{r}
+query = "
+MATCH (n:Ingredient)-[r:INGREDIENT_DE]->(m:Recette)<-[s:INGREDIENT_DE]-(o:Ingredient)
+WITH n as i1, o as i2, count(r) as nombre
+return i1.nom as nom1, i2.nom as nom2, nombre 
+order by nombre desc
+limit 150
+"
+
+df_heatmap = cypher(neo4j, query)
+ggplot(df_heatmap, aes(nom1, nom2 )) +
+  geom_tile(aes(fill = nombre), color = "white") +
+  geom_text(aes(nom1, nom2, label = nombre), color = "black", size = 2) +
+  scale_fill_gradient(low = "white", high = "steelblue") +
+  ylab("Ingrédient ") +
+  xlab("Ingrédient") +
+  theme(legend.title = element_text(size = 10),
+        legend.text = element_text(size = 12),
+        plot.title = element_text(size=16),
+        axis.title=element_text(size=7,face="bold"),
+        axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(fill = "Nb occ.")
+```
+
+## Exemple de graphe simple
+
+```{r}
+
+query = "
+MATCH (n:Ingredient)-[r:INGREDIENT_DE]->(m:Recette)<-[s:INGREDIENT_DE]-(o:Ingredient)
+WITH n as i1, o as i2, ceil(count(r)/15) as nombre
+return i1.nom as nom1, i2.nom as nom2, nombre
+order by nombre desc
+limit 100
+"
+graphe = cypher(neo4j, query)
+relations <- graphe
+g <- graph.data.frame(relations, directed=FALSE)
+plot(g, edge.width=E(g)$nombre)
+
+```
