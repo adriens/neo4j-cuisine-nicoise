@@ -1,0 +1,173 @@
+// load the neo4j datbase
+// https://nicolewhite.github.io/2014/12/17/whats-new-rneo4j.html
+// https://github.com/nicolewhite/RNeo4j
+
+install.packages("RNeo4j")
+install.packages("ggplot2")
+install.packages("Rcpp")
+install.packages("extrafont")
+install.packages("tagcloud")
+
+# Install
+install.packages("tm")  # for text mining
+install.packages("SnowballC") # for text stemming
+install.packages("wordcloud") # word-cloud generator 
+install.packages("RColorBrewer") # color palettes
+# Load
+library("tm")
+library("SnowballC")
+library("wordcloud")
+library("RColorBrewer")
+
+
+
+
+neo4j = startGraph("http://neo4j:sakiss@localhost:7474/db/data/")
+
+
+
+query = "
+MATCH (n)-[r:INGREDIENT_DE]->(s:Recette)
+WITH n as Ingredient, count(r) as nombre
+RETURN Ingredient.nom , nombre
+ORDER BY nombre DESC
+LIMIT 20
+"
+stats = cypher(neo4j, query)
+
+
+
+library(ggplot2)
+
+ggplot(stats, aes(x = reorder(Ingredient.nom, nombre), y = nombre)) + 
+  geom_bar(stat = "identity", fill = "darkblue") +
+  coord_flip() +
+  labs(x = "Ingrédient", 
+       y = "Nombre", 
+       title = "Ingrédients les plus utilisés de la cuisine niçoise") +
+  theme(axis.text = element_text(size = 12, color = "black"),
+        axis.title = element_text(size = 14, color = "black"),
+        plot.title = element_text(size = 16, color = "black"))
+		
+//////////////////////////////////////////////
+/// tag cloud
+# liste des ingrédients de toutes les recettes
+query = "
+MATCH (n)-[r:INGREDIENT_DE]->(s:Recette)
+WITH n as Ingredient, count(r) as nombre
+RETURN Ingredient.nom , nombre
+ORDER BY nombre DESC
+LIMIT 100
+"
+
+stats = cypher(neo4j, query)
+
+# library( extrafont )
+
+
+
+
+
+# word cloud de tous les ingrédients
+
+set.seed(1234)
+wordcloud(words = stats$Ingredient, freq = stats$nombre, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+
+///////////
+// Les categories d'aliments les plus utilisées : tag cloud
+
+MATCH (n:Ingredient)-[r]->(m:Categorie_Alimentaire)
+RETURN m.nom as Categorie, COUNT(*) AS nombre
+ORDER BY nombre DESC
+LIMIT 10;
+
+
+
+
+/// Kclustering sur les recettes
+
+// Arbre de décision sur les ingrédients
+
+
+
+// Tag cloud des légumes 
+query = "
+MATCH (n:Ingredient)-[r]->(m:Recette)
+where (n)-[:EST_DE_FAMILLE]-({ nom: 'Légume' })
+with n , count(*) as count
+order by count desc
+return n.nom as Ingredient, count as nombre
+"
+
+stats = cypher(neo4j, query)
+
+
+
+set.seed(1234)
+wordcloud(words = stats$Ingredient, freq = stats$nombre, min.freq = 1,
+          max.words=20, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+
+		  
+/////////////////
+
+/// Les catégories alimentaires : tag cloud
+
+query = "
+MATCH (n:Ingredient)-[r]->(m:Recette)
+//where (n)-[:EST_DE_FAMILLE]-({ nom: 'Légume' })
+with n , count(*) as count
+order by count desc
+match (n)-[:EST_DE_FAMILLE]->(c:Categorie_Alimentaire)
+with c, count(*) as count
+return  c.nom as categorie, count as nombre
+order by nombre desc
+"
+
+stats = cypher(neo4j, query)
+
+
+
+set.seed(1234)
+wordcloud(words = stats$categorie, freq = stats$nombre, min.freq = 1,
+          max.words=20, random.order=FALSE, rot.per=0.35, 
+          colors=brewer.pal(8, "Dark2"))
+		  
+		  
+///////////////////////////////
+// histogramme du nombre d'aliments par catégorie
+
+
+
+/////////////////////////////////
+// Camembert des ingrédients utilisés par catégorie
+
+
+///////////////////////////////////
+// Les ingrédients les plus souvent utilisés ensembles, et combien
+// pour chaque ingrédeint : nb fois que x est dans une même recette avec Y
+// f(x,y) = f(y,x) : nombre de fois que x et y sont dans une même recette (distance) : plus c grand plus les ingrédients sont proches
+// chart : http://www.r-graph-gallery.com/274-map-a-variable-to-ggplot2-scatterplot/
+// faire liste ordonnée des ingrédients : id, nom classé par ordre alpha
+ail,ail-> pour chaque recette, ail est avec ail ? Si oui alors +1
+
+Liste des ingrédients classée :
+
+graph = startGraph("http://neo4j:sakiss@localhost:7474/db/data/")
+
+
+query = "
+MATCH (n:Ingredient)
+with n.nom as ingredient
+return ingredient
+ORDER BY ingredient asc
+"
+
+
+cypher(graph, query)
+
+
+
+// hierarchcal
